@@ -2,20 +2,25 @@ package csapitraining.luckyblocks.block;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import ru.divinecraft.customstuff.api.block.AbstractCustomBlock;
 import ru.divinecraft.customstuff.api.block.manager.CustomBlockManager;
+import ru.divinecraft.customstuff.api.render.RenderedCustomBlock;
 
 public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
 
     @NotNull Plugin plugin;
+    @NotNull RenderedCustomBlock render;
+
 
     protected AbstractLuckyBlock(
             @NotNull final CustomBlockManager manager, @NotNull final Location location,
-            @NotNull final Plugin plugin) {
+            @NotNull final Plugin plugin, @NotNull final RenderedCustomBlock render) {
         super(manager, location);
         this.plugin = plugin;
+        this.render = render;
     }
 
 
@@ -28,7 +33,7 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
     }
 
     // render
-    /*
+
 
     protected void startDisplay() {
         {
@@ -53,5 +58,4 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
         // render.close();
     }
 
-    */
 }

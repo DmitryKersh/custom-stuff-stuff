@@ -19,7 +19,7 @@ public final class LuckyBlocksCustomBlocks extends AbstractCustomBlocks {
     public LuckyBlocksCustomBlocks(final @NotNull Plugin plugin) {
         registrations = Arrays.asList(
                 SimpleCustomBlockRegistration.of(Type.BASIC_LUCKYBLOCK, (manager, location, direction, nbt) -> BasicLuckyBlock
-                        .create(manager, location, plugin))
+                        .create(manager, location, plugin, customStuff().blockRenderer()))
         );
     }
 
