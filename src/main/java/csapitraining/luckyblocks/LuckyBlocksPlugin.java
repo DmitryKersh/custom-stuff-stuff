@@ -1,6 +1,6 @@
 package csapitraining.luckyblocks;
 
-import csapitraining.luckyblocks.blocks.LuckyBlocksCustomBlocks;
+import csapitraining.luckyblocks.block.LuckyBlocksCustomBlocks;
 import lombok.val;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.divinecraft.customstuff.api.block.CustomBlocks;
@@ -15,6 +15,7 @@ public final class LuckyBlocksPlugin extends JavaPlugin {
 
         try (val loading = loadingCustomStuff.request(this)){
             CustomBlocks.register(LuckyBlocksCustomBlocks.create(this), loading);
+
         }
     }
 

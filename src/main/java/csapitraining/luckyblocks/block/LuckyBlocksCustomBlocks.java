@@ -1,6 +1,5 @@
-package csapitraining.luckyblocks.blocks;
+package csapitraining.luckyblocks.block;
 
-import csapitraining.luckyblocks.LuckyBlocksConstants;
 import lombok.NonNull;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;

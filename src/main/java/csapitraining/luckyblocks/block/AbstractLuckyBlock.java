@@ -1,16 +1,11 @@
-package csapitraining.luckyblocks.blocks;
+package csapitraining.luckyblocks.block;
 
-import csapitraining.luckyblocks.LuckyBlocksConstants;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import ru.divinecraft.customstuff.api.block.AbstractCustomBlock;
 import ru.divinecraft.customstuff.api.block.manager.CustomBlockManager;
-import ru.divinecraft.customstuff.api.block.properties.BlockProperties;
-import ru.divinecraft.customstuff.api.render.RenderedCustomBlock;
 
 public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
 
