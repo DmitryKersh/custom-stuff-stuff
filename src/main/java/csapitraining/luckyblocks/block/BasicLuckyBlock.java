@@ -30,7 +30,7 @@ public class BasicLuckyBlock extends AbstractLuckyBlock {
         drops.put(new ItemStack(Material.DIAMOND), 0.01);
 
         drops.put(new ItemStack(Material.IRON_AXE), 0.05);
-        drops.put(new ItemStack(Material.ENDERMAN_SPAWN_EGG), 0.05);
+        drops.put(new ItemStack(Material.ENDER_PEARL), 0.05);
 
         drops.put(new ItemStack(Material.MOSSY_COBBLESTONE, 16), 0.09);
 
