@@ -20,7 +20,7 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
     @NotNull Plugin plugin;
     @NotNull RenderedCustomBlock render;
 
-    protected Map<ItemStack, Double> drops;
+    // protected Map<ItemStack, Double> drops;
 
     protected AbstractLuckyBlock(
             @NotNull final CustomBlockManager manager, @NotNull final Location location,
@@ -28,9 +28,10 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
         super(manager, location);
         this.plugin = plugin;
         this.render = render;
-        drops = new HashMap<>();
+        // drops = new HashMap<>();
     }
 
+    protected abstract ItemStack resolveLoot();
 
     protected void createPhysicalBlock() {
         location.getBlock().setType(Material.BARRIER);
