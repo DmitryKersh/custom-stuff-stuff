@@ -18,6 +18,7 @@ public class LuckyBlocksConstants {
     @UtilityClass
     public static class Type {
         public final @NotNull NamespacedKey BASIC_LUCKYBLOCK = create("basic_luckyblock");
+        public final @NotNull NamespacedKey ALLIN_LUCKYBLOCK = create("allin_luckyblock");
 
         private @NotNull NamespacedKey create(final @NotNull String name) {
             return NamespacedKeys.of(NAMESPACE, name);
@@ -27,6 +28,7 @@ public class LuckyBlocksConstants {
     @UtilityClass
     public static class RecipeKey {
         public final @NotNull NamespacedKey BASIC_LUCKYBLOCK = create("basic_luckyblock");
+        public final @NotNull NamespacedKey ALLIN_LUCKYBLOCK = create("allin_luckyblock");
 
         private @NotNull NamespacedKey create(final @NotNull String name) {
             return NamespacedKeys.of(NAMESPACE, RECIPES_PREFIX + '/' + name);
@@ -38,6 +40,7 @@ public class LuckyBlocksConstants {
         @UtilityClass
         public static class Properties {
             public final @NotNull BlockProperties BASIC_LUCKYBLOCK = StaticBlockProperties.create(true, 1);
+            public final @NotNull BlockProperties ALLIN_LUCKYBLOCK = StaticBlockProperties.create(true, 1);
         }
     }
 
@@ -46,6 +49,7 @@ public class LuckyBlocksConstants {
         @UtilityClass
         public static class Properties {
             public final @NotNull ItemProperties BASIC_LUCKYBLOCK = stackable();
+            public final @NotNull ItemProperties ALLIN_LUCKYBLOCK = stackable();
         }
     }
 }

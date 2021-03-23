@@ -1,5 +1,6 @@
 package csapitraining.luckyblocks.block;
 
+import csapitraining.luckyblocks.LuckyBlocksConstants;
 import csapitraining.luckyblocks.LuckyBlocksConstants.Type;
 import lombok.val;
 import org.bukkit.Location;
@@ -81,6 +82,6 @@ public class BasicLuckyBlock extends AbstractLuckyBlock {
 
     @Override
     public @NotNull BlockProperties getProperties() {
-        return null;
+        return LuckyBlocksConstants.Block.Properties.BASIC_LUCKYBLOCK;
     }
 }

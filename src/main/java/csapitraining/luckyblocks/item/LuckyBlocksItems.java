@@ -19,13 +19,18 @@ public class LuckyBlocksItems extends AbstractCustomItems {
 
     public LuckyBlocksItems() {
         registrations = Arrays.asList(
-                SimpleCustomItemRegistration.of(Type.BASIC_LUCKYBLOCK, ((customItemManager, compoundMap) ->
+                SimpleCustomItemRegistration.of(Type.BASIC_LUCKYBLOCK, (customItemManager, compoundMap) ->
                     StaticCustomItem.create(Type.BASIC_LUCKYBLOCK,
                             LuckyBlocksConstants.Item.Properties.BASIC_LUCKYBLOCK,
                             customItemManager, LuckyBlocksEnum.BASIC_LUCKYBLOCK.handItem(),
                             Type.BASIC_LUCKYBLOCK, compoundMap
-                            )
-                ))
+                            )),
+                SimpleCustomItemRegistration.of(Type.ALLIN_LUCKYBLOCK, (customItemManager, compoundMap) ->
+                        StaticCustomItem.create(Type.ALLIN_LUCKYBLOCK,
+                                LuckyBlocksConstants.Item.Properties.ALLIN_LUCKYBLOCK,
+                                customItemManager, LuckyBlocksEnum.ALLIN_LUCKYBLOCK.handItem(),
+                                Type.ALLIN_LUCKYBLOCK, compoundMap
+                        ))
         );
     }
 

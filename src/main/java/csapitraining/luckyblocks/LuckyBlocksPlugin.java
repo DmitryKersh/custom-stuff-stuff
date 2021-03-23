@@ -51,6 +51,20 @@ public final class LuckyBlocksPlugin extends JavaPlugin {
                         .setIngredient('g', Material.GOLD_INGOT)
                 );
 
+                final ItemStack allInLuckyBlock;
+                recipeManager.registerRecipe(
+                        shapedRecipeBase(
+                                allInLuckyBlock = requireCustomItem(
+                                        LuckyBlocksConstants.Type.ALLIN_LUCKYBLOCK,
+                                        itemManager),
+                                        LuckyBlocksConstants.RecipeKey.ALLIN_LUCKYBLOCK,
+                                        "brb",
+                                        "rdr",
+                                        "brb")
+                        .setIngredient('b', Material.NETHER_BRICK)
+                        .setIngredient('r', Material.BLAZE_ROD)
+                        .setIngredient('d', Material.DIAMOND)
+                        );
             });
         }
     }

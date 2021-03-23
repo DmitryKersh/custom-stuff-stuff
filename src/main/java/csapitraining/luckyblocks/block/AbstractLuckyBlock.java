@@ -17,8 +17,8 @@ import java.util.Random;
 
 public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
 
-    @NotNull Plugin plugin;
-    @NotNull RenderedCustomBlock render;
+    protected @NotNull Plugin plugin;
+    protected @NotNull RenderedCustomBlock render;
 
     // protected Map<ItemStack, Double> drops;
 
@@ -28,7 +28,6 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
         super(manager, location);
         this.plugin = plugin;
         this.render = render;
-        // drops = new HashMap<>();
     }
 
     protected abstract ItemStack resolveLoot();
@@ -42,8 +41,6 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
     }
 
     // render
-
-
     protected void startDisplay() {
         {
             final Plugin thisPlugin;
@@ -52,7 +49,7 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
                     .runTask(thisPlugin, this::createPhysicalBlock);
             else createPhysicalBlock();
         }
-        // render.start();
+        render.start();
     }
 
     protected void stopDisplay() {
@@ -64,7 +61,6 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
             else removePhysicalBlock();
         }
 
-        // render.close();
+        render.close();
     }
-
 }
