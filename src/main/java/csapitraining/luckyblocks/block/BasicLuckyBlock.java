@@ -22,7 +22,7 @@ import java.util.Random;
 
 import static java.util.Map.entry;
 
-public class BasicLuckyBlock extends AbstractLuckyBlock {
+public class BasicLuckyBlock extends AbstractLuckyBlock implements LuckyBlocksConstants.LuckyBlockAward {
     private static final Map<ItemStack, Double> DROPS_MAP = Map.ofEntries(
             entry(new ItemStack(Material.DIAMOND), 0.01),
             entry(new ItemStack(Material.IRON_AXE), 0.05),
@@ -70,9 +70,13 @@ public class BasicLuckyBlock extends AbstractLuckyBlock {
     }
 
     @Override
+    public void awardPlayer(@NotNull final Location location, @NotNull final Player player) {
+        LuckyBlocksConstants.LuckyBlockAward.loot(resolveLoot()).awardPlayer(location, player);
+    }
+
+    @Override
     public void onBreak(@NotNull final Player player) {
-        Location location = this.getLocation().clone();
-        location.getWorld().dropItem(location.add(0.5, 0.5, 0.5), resolveLoot());
+        awardPlayer(getLocation().clone(), player);
     }
 
     @Override

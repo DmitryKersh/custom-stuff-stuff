@@ -64,3 +64,4 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock {
         render.close();
     }
 }
+

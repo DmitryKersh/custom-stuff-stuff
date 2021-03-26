@@ -1,7 +1,10 @@
 package csapitraining.luckyblocks;
 
 import lombok.experimental.UtilityClass;
+import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import ru.divinecraft.customstuff.api.block.properties.BlockProperties;
 import ru.divinecraft.customstuff.api.block.properties.StaticBlockProperties;
@@ -50,6 +53,19 @@ public class LuckyBlocksConstants {
         public static class Properties {
             public final @NotNull ItemProperties BASIC_LUCKYBLOCK = stackable();
             public final @NotNull ItemProperties ALLIN_LUCKYBLOCK = stackable();
+        }
+    }
+
+    @FunctionalInterface
+    public interface LuckyBlockAward {
+        void awardPlayer(@NotNull Location location, @NotNull Player player);
+
+        static @NotNull LuckyBlockAward loot(final @NotNull ItemStack item){
+            return (location, player) -> location.getWorld().dropItemNaturally(location, item);
+        }
+
+        static @NotNull LuckyBlockAward message(final @NotNull String message){
+            return (location, player) -> player.sendMessage(message);
         }
     }
 }
