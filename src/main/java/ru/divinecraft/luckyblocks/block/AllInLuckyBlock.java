@@ -1,6 +1,6 @@
-package csapitraining.luckyblocks.block;
+package ru.divinecraft.luckyblocks.block;
 
-import csapitraining.luckyblocks.LuckyBlocksConstants;
+import ru.divinecraft.luckyblocks.LuckyBlocksConstants;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
-import org.checkerframework.checker.units.qual.A;
 import org.jetbrains.annotations.NotNull;
 import ru.divinecraft.customstuff.api.block.CustomBlock;
 import ru.divinecraft.customstuff.api.block.manager.CustomBlockManager;

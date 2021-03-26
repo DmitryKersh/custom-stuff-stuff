@@ -1,8 +1,7 @@
-package csapitraining.luckyblocks.block;
+package ru.divinecraft.luckyblocks.block;
 
 
-import csapitraining.luckyblocks.LuckyBlocksConstants;
-import csapitraining.luckyblocks.LuckyBlocksConstants.Type;
+import ru.divinecraft.luckyblocks.LuckyBlocksConstants;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -29,8 +28,8 @@ import java.util.function.Function;
 @Accessors(fluent = true)
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public enum LuckyBlocksEnum {
-    BASIC_LUCKYBLOCK(Type.BASIC_LUCKYBLOCK, 15, "block.dmitrykersh.basic_luckyblock"),
-    ALLIN_LUCKYBLOCK(Type.ALLIN_LUCKYBLOCK, 15, "block.dmitrykersh.allin_luckyblock");
+    BASIC_LUCKYBLOCK(LuckyBlocksConstants.Type.BASIC_LUCKYBLOCK, 15, "block.dmitrykersh.basic_luckyblock"),
+    ALLIN_LUCKYBLOCK(LuckyBlocksConstants.Type.ALLIN_LUCKYBLOCK, 15, "block.dmitrykersh.allin_luckyblock");
 
     @Getter
     @NotNull CustomBlockRenderingProperties renderingProperties;

@@ -1,11 +1,10 @@
-package csapitraining.luckyblocks.item;
+package ru.divinecraft.luckyblocks.item;
 
-import csapitraining.luckyblocks.LuckyBlocksConstants;
-import csapitraining.luckyblocks.block.LuckyBlocksEnum;
+import ru.divinecraft.luckyblocks.LuckyBlocksConstants;
+import ru.divinecraft.luckyblocks.block.LuckyBlocksEnum;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 import ru.divinecraft.customstuff.api.item.AbstractCustomItems;
-import csapitraining.luckyblocks.LuckyBlocksConstants.Type;
 import ru.divinecraft.customstuff.api.item.CustomItems;
 import ru.divinecraft.customstuff.api.item.StaticCustomItem;
 
@@ -19,17 +18,19 @@ public class LuckyBlocksItems extends AbstractCustomItems {
 
     public LuckyBlocksItems() {
         registrations = Arrays.asList(
-                SimpleCustomItemRegistration.of(Type.BASIC_LUCKYBLOCK, (customItemManager, compoundMap) ->
-                    StaticCustomItem.create(Type.BASIC_LUCKYBLOCK,
+                SimpleCustomItemRegistration.of(
+                        LuckyBlocksConstants.Type.BASIC_LUCKYBLOCK, (customItemManager, compoundMap) ->
+                    StaticCustomItem.create(LuckyBlocksConstants.Type.BASIC_LUCKYBLOCK,
                             LuckyBlocksConstants.Item.Properties.BASIC_LUCKYBLOCK,
                             customItemManager, LuckyBlocksEnum.BASIC_LUCKYBLOCK.handItem(),
-                            Type.BASIC_LUCKYBLOCK, compoundMap
+                            LuckyBlocksConstants.Type.BASIC_LUCKYBLOCK, compoundMap
                             )),
-                SimpleCustomItemRegistration.of(Type.ALLIN_LUCKYBLOCK, (customItemManager, compoundMap) ->
-                        StaticCustomItem.create(Type.ALLIN_LUCKYBLOCK,
+                SimpleCustomItemRegistration.of(
+                        LuckyBlocksConstants.Type.ALLIN_LUCKYBLOCK, (customItemManager, compoundMap) ->
+                        StaticCustomItem.create(LuckyBlocksConstants.Type.ALLIN_LUCKYBLOCK,
                                 LuckyBlocksConstants.Item.Properties.ALLIN_LUCKYBLOCK,
                                 customItemManager, LuckyBlocksEnum.ALLIN_LUCKYBLOCK.handItem(),
-                                Type.ALLIN_LUCKYBLOCK, compoundMap
+                                LuckyBlocksConstants.Type.ALLIN_LUCKYBLOCK, compoundMap
                         ))
         );
     }

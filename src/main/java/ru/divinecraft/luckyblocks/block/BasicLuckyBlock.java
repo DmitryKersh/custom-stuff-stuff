@@ -1,7 +1,6 @@
-package csapitraining.luckyblocks.block;
+package ru.divinecraft.luckyblocks.block;
 
-import csapitraining.luckyblocks.LuckyBlocksConstants;
-import csapitraining.luckyblocks.LuckyBlocksConstants.Type;
+import ru.divinecraft.luckyblocks.LuckyBlocksConstants;
 import lombok.val;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -81,7 +80,7 @@ public class BasicLuckyBlock extends AbstractLuckyBlock implements LuckyBlocksCo
 
     @Override
     public @NotNull NamespacedKey getType() {
-        return Type.BASIC_LUCKYBLOCK;
+        return LuckyBlocksConstants.Type.BASIC_LUCKYBLOCK;
     }
 
     @Override

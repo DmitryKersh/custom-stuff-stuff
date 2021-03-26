@@ -1,12 +1,12 @@
-package csapitraining.luckyblocks.block;
+package ru.divinecraft.luckyblocks.block;
 
-import csapitraining.luckyblocks.LuckyBlocksConstants.Type;
 import lombok.NonNull;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 import ru.divinecraft.customstuff.api.block.AbstractCustomBlocks;
 import ru.divinecraft.customstuff.api.block.CustomBlocks;
+import ru.divinecraft.luckyblocks.LuckyBlocksConstants;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,10 +19,10 @@ public final class LuckyBlocksCustomBlocks extends AbstractCustomBlocks {
     public LuckyBlocksCustomBlocks(final @NotNull Plugin plugin) {
         registrations = Arrays.asList(
                 SimpleCustomBlockRegistration
-                        .of(Type.BASIC_LUCKYBLOCK, (manager, location, direction, nbt) -> BasicLuckyBlock
+                        .of(LuckyBlocksConstants.Type.BASIC_LUCKYBLOCK, (manager, location, direction, nbt) -> BasicLuckyBlock
                                 .create(manager, location, plugin, customStuff().blockRenderer())),
 
-                SimpleCustomBlockRegistration.of(Type.ALLIN_LUCKYBLOCK,
+                SimpleCustomBlockRegistration.of(LuckyBlocksConstants.Type.ALLIN_LUCKYBLOCK,
                         (manager, location, direction, nbtTags) -> AllInLuckyBlock
                                 .create(manager, location, plugin, customStuff().blockRenderer()))
         );

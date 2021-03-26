@@ -1,5 +1,8 @@
-name: Luckyblocks
+name: ${project.name}
 version: ${project.version}
-main: csapitraining.luckyblocks.Luckyblocks
+main: ${rootPackage}.LuckyBlocksPlugin
 api-version: 1.16
-authors: [ dmitrykersh ]
+load: STARTUP
+depend: [ ZarazaCommon, CustomStuff ]
+authors: [ Dmitrykersh ]
+description: ${project.description}

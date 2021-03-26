@@ -1,4 +1,4 @@
-package csapitraining.luckyblocks.block;
+package ru.divinecraft.luckyblocks.block;
 
 import lombok.val;
 import org.bukkit.Location;

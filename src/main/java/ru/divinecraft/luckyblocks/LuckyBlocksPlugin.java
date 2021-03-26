@@ -1,16 +1,13 @@
-package csapitraining.luckyblocks;
+package ru.divinecraft.luckyblocks;
 
-import csapitraining.luckyblocks.block.LuckyBlocksCustomBlocks;
-import csapitraining.luckyblocks.item.LuckyBlocksItems;
+import ru.divinecraft.luckyblocks.block.LuckyBlocksCustomBlocks;
+import ru.divinecraft.luckyblocks.item.LuckyBlocksItems;
 import lombok.val;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Server;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import ru.divinecraft.customstuff.api.block.CustomBlocks;
