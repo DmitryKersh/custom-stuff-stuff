@@ -31,4 +31,4 @@ jobs:
           name: plugin
           # TODO: specify artifact name
           path: |
-            lucky-blocks/target/lucky-blocks-*.jar
+            target/lucky-blocks-*.jar
