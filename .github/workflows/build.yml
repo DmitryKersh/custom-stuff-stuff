@@ -29,6 +29,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: plugin
-          # TODO: specify artifact name
           path: |
             target/lucky-blocks-*.jar
