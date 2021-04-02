@@ -18,23 +18,24 @@ import ru.divinecraft.customstuff.api.render.RenderedCustomBlock;
 
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static java.util.Map.entry;
 
 public class BasicLuckyBlock extends AbstractLuckyBlock implements LuckyBlocksConstants.LuckyBlockAward {
     private static final Map<ItemStack, Double> DROPS_MAP = Map.ofEntries(
-            entry(new ItemStack(Material.DIAMOND), 0.01),
-            entry(new ItemStack(Material.IRON_AXE), 0.05),
-            entry(new ItemStack(Material.ENDER_PEARL), 0.05),
-            entry(new ItemStack(Material.MOSSY_COBBLESTONE, 16), 0.09),
-            entry(new ItemStack(Material.PORKCHOP, 3), 0.1),
-            entry(new ItemStack(Material.POTATO), 0.1),
-            entry(new ItemStack(Material.CARROT), 0.1),
-            entry(new ItemStack(Material.IRON_HELMET), 0.1),
-            entry(new ItemStack(Material.BIRCH_LOG, 32), 0.1),
-            entry(new ItemStack(Material.SUGAR_CANE, 3), 0.1),
-            entry(new ItemStack(Material.NETHER_WART, 12), 0.1),
-            entry(new ItemStack(Material.MELON_SEEDS), 0.1)
+            entry(new ItemStack(Material.DIAMOND), 1.0),
+            entry(new ItemStack(Material.IRON_AXE), 5.0),
+            entry(new ItemStack(Material.ENDER_PEARL), 5.0),
+            entry(new ItemStack(Material.MOSSY_COBBLESTONE, 16), 9.0),
+            entry(new ItemStack(Material.PORKCHOP, 3), 10.0),
+            entry(new ItemStack(Material.POTATO), 10.0),
+            entry(new ItemStack(Material.CARROT), 10.0),
+            entry(new ItemStack(Material.IRON_HELMET), 10.0),
+            entry(new ItemStack(Material.BIRCH_LOG, 32), 10.0),
+            entry(new ItemStack(Material.SUGAR_CANE, 3), 10.0),
+            entry(new ItemStack(Material.NETHER_WART, 12), 10.0),
+            entry(new ItemStack(Material.MELON_SEEDS), 10.0)
             );
 
     protected BasicLuckyBlock(
@@ -50,9 +51,10 @@ public class BasicLuckyBlock extends AbstractLuckyBlock implements LuckyBlocksCo
         double sum = 0.0;
         for (val entry : DROPS_MAP.entrySet()) sum += entry.getValue();
 
-        val random = new Random();
+        val random = ThreadLocalRandom.current();
         val randomNumber = random.nextDouble() * sum;
 
+        sum = 0.0;
         for (val entry : DROPS_MAP.entrySet()){
             if (sum >= randomNumber) return entry.getKey();
             sum += entry.getValue();
@@ -69,13 +71,13 @@ public class BasicLuckyBlock extends AbstractLuckyBlock implements LuckyBlocksCo
     }
 
     @Override
-    public void awardPlayer(@NotNull final Location location, @NotNull final Player player) {
-        LuckyBlocksConstants.LuckyBlockAward.loot(resolveLoot()).awardPlayer(location, player);
+    public void onCreate() {
+        startDisplay();
     }
 
     @Override
-    public void onBreak(@NotNull final Player player) {
-        awardPlayer(getLocation().clone(), player);
+    public void onRemove() {
+        stopDisplay();
     }
 
     @Override
