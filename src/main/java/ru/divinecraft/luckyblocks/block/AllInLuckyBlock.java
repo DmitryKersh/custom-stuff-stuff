@@ -1,6 +1,5 @@
 package ru.divinecraft.luckyblocks.block;
 
-import ru.divinecraft.luckyblocks.LuckyBlocksConstants;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -14,10 +13,12 @@ import ru.divinecraft.customstuff.api.block.manager.CustomBlockManager;
 import ru.divinecraft.customstuff.api.block.properties.BlockProperties;
 import ru.divinecraft.customstuff.api.render.CustomBlockRenderer;
 import ru.divinecraft.customstuff.api.render.RenderedCustomBlock;
+import ru.divinecraft.luckyblocks.LuckyBlocksConstants;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class AllInLuckyBlock extends AbstractLuckyBlock {
+public class AllInLuckyBlock extends AbstractLuckyBlock implements LuckyBlocksConstants.LuckyBlockAward {
     private static final double CHANCE = 0.1;
 
     public static @NotNull CustomBlock create(final @NotNull CustomBlockManager manager,
@@ -38,15 +39,9 @@ public class AllInLuckyBlock extends AbstractLuckyBlock {
 
     @Override
     protected ItemStack resolveLoot() {
-        Random random = new Random();
+        Random random = ThreadLocalRandom.current();
         if (random.nextDouble() <= CHANCE) return new ItemStack(Material.NETHER_STAR);
         return new ItemStack(Material.DIRT);
-    }
-
-    @Override
-    public void onBreak(@NotNull final Player player) {
-        Location location = getLocation().clone();
-        location.getWorld().dropItem(location.add(0.5, 0.5, 0.5), resolveLoot());
     }
 
     @Override
@@ -59,6 +54,14 @@ public class AllInLuckyBlock extends AbstractLuckyBlock {
         return LuckyBlocksConstants.Block.Properties.ALLIN_LUCKYBLOCK;
     }
 
+    @Override
+    public void onCreate() {
+        startDisplay();
+    }
 
+    @Override
+    public void onRemove() {
+        stopDisplay();
+    }
 
 }
