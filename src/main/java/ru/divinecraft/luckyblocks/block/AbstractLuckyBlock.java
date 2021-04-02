@@ -25,8 +25,8 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock implements 
     // protected Map<ItemStack, Double> drops;
 
     protected AbstractLuckyBlock(
-            @NotNull final CustomBlockManager manager, @NotNull final Location location,
-            @NotNull final Plugin plugin, @NotNull final RenderedCustomBlock render) {
+            final @NotNull CustomBlockManager manager, final @NotNull Location location,
+            final @NotNull Plugin plugin, final @NotNull RenderedCustomBlock render) {
         super(manager, location);
         this.plugin = plugin;
         this.render = render;
@@ -43,12 +43,12 @@ public abstract class AbstractLuckyBlock extends AbstractCustomBlock implements 
     }
 
     @Override
-    public void awardPlayer(@NotNull final Location location, @NotNull final Player player) {
+    public void awardPlayer(final @NotNull Location location,  final @NotNull Player player) {
         LuckyBlocksConstants.LuckyBlockAward.loot(resolveLoot()).awardPlayer(location, player);
     }
 
     @Override
-    public void onBreak(@NotNull final Player player) {
+    public void onBreak( final @NotNull Player player) {
         awardPlayer(getLocation().clone(), player);
     }
 
